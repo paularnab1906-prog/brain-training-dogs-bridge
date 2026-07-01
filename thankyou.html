@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Brain Games Guide Is on Its Way! — Smart Paw Tips</title>
+  <style>
+    :root {
+      --bg:      oklch(98.5% 0.006 85);
+      --surface: oklch(100% 0.002 85);
+      --fg:      oklch(22% 0.018 70);
+      --muted:   oklch(52% 0.014 70);
+      --border:  oklch(88% 0.008 85);
+      --accent:  oklch(56% 0.14 155);
+      --accent-dark: oklch(46% 0.12 155);
+      --font-display: 'Georgia', 'Iowan Old Style', 'Charter', serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px; line-height: 1.7;
+      color: var(--fg); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .ty-wrapper {
+      max-width: 560px; width: 100%;
+    }
+
+    /* Success icon */
+    .ty-icon {
+      width: 72px; height: 72px; margin: 0 auto 28px;
+      background: oklch(94% 0.03 155);
+      border-radius: 50%;
+      display: grid; place-items: center;
+    }
+    .ty-icon svg { width: 32px; height: 32px; color: var(--accent); }
+
+    /* Main heading */
+    .ty-heading {
+      text-align: center; margin-bottom: 32px;
+    }
+    .ty-heading h1 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.2; letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .ty-heading p {
+      font-size: 16px; color: var(--muted); line-height: 1.55;
+      max-width: 440px; margin: 0 auto;
+    }
+
+    /* Steps */
+    .ty-steps {
+      display: grid; gap: 14px;
+      margin-bottom: 36px;
+    }
+    .ty-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .ty-step__num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: var(--accent); color: #fff;
+      border-radius: 50%; display: grid; place-items: center;
+      font-size: 15px; font-weight: 700;
+    }
+    .ty-step__text { font-size: 15px; line-height: 1.55; }
+    .ty-step__text strong { display: block; margin-bottom: 2px; color: var(--fg); }
+    .ty-step__text span { color: var(--muted); }
+
+    /* CTA box */
+    .ty-cta-box {
+      background: linear-gradient(135deg, oklch(28% 0.04 70), oklch(22% 0.03 70));
+      color: oklch(95% 0.006 70);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 32px 28px;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .ty-cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 24px);
+      line-height: 1.3; margin-bottom: 12px;
+    }
+    .ty-cta-box p {
+      font-size: 15px; line-height: 1.6;
+      opacity: 0.85; margin-bottom: 24px;
+      max-width: 420px; margin-left: auto; margin-right: auto;
+    }
+    .ty-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 40px;
+      background: var(--accent); color: #fff;
+      font-size: 17px; font-weight: 600;
+      border: none; border-radius: 999px;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .ty-cta-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Email note */
+    .ty-note {
+      text-align: center;
+      font-size: 13px; color: var(--muted); line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    /* Footer */
+    .ty-footer {
+      text-align: center; padding: 20px 0;
+      font-size: 12px; color: #7a7570;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+    .ty-footer p { margin-bottom: 4px; }
+    .ty-footer a { color: #7a7570; }
+
+    @media (max-width: 480px) {
+      .ty-cta-box { padding: 24px 20px; }
+      .ty-step { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ty-wrapper">
+
+  <!-- Success icon -->
+  <div class="ty-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+
+  <!-- Heading -->
+  <div class="ty-heading">
+    <h1>Your Brain Games Guide Is on Its Way!</h1>
+    <p>We just sent the PDF to your inbox. Here's what to do next:</p>
+  </div>
+
+  <!-- 3 Steps -->
+  <div class="ty-steps">
+    <div class="ty-step">
+      <div class="ty-step__num">1</div>
+      <div class="ty-step__text">
+        <strong>Check your email</strong>
+        <span>Look for a message from Smart Paw Tips. If you don't see it in a couple of minutes, check your spam or promotions folder.</span>
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step__num">2</div>
+      <div class="ty-step__text">
+        <strong>Download the PDF</strong>
+        <span>Click the download link in the email. Save it to your phone or print it out — whatever works best for you.</span>
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step__num">3</div>
+      <div class="ty-step__text">
+        <strong>Try Game #1 today</strong>
+        <span>It only takes 5 minutes. Most owners notice a calmer, more focused dog by the end of the first day.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Box -->
+  <div class="ty-cta-box">
+    <h2>Want Even Better Results?</h2>
+    <p>While you're here — thousands of dog owners have upgraded to the full 21-game program. It includes step-by-step video lessons, structured difficulty levels, and a complete behavior transformation system.</p>
+    <a href="https://b5ffe3vcm3ls9la8u3qmc3r6uh.hop.clickbank.net" class="ty-cta-btn">See the Full Program &rarr;</a>
+  </div>
+
+  <!-- Note -->
+  <p class="ty-note">If you don't receive the email within 5 minutes, please check your spam folder or contact support@smartpawtips.com.</p>
+
+  <!-- Footer -->
+  <div class="ty-footer">
+    <p>&copy; 2026 Smart Paw Tips</p>
+    <p><a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>

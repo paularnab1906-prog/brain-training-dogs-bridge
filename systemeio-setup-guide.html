@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Systeme.io Funnel Setup Guide — Brain Training for Dogs</title>
+  <style>
+    :root {
+      --bg:      oklch(98.5% 0.006 85);
+      --surface: oklch(100% 0.002 85);
+      --fg:      oklch(22% 0.018 70);
+      --muted:   oklch(52% 0.014 70);
+      --border:  oklch(88% 0.008 85);
+      --accent:  oklch(56% 0.14 155);
+      --accent-dark: oklch(46% 0.12 155);
+      --warm:    oklch(96% 0.012 75);
+      --font-display: 'Georgia', 'Iowan Old Style', 'Charter', serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px; line-height: 1.7;
+      color: var(--fg); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px;
+    }
+    .subtitle { font-size: 17px; color: var(--muted); margin-bottom: 40px; }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 26px);
+      line-height: 1.25; letter-spacing: -0.01em;
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 17px; font-weight: 600; margin: 24px 0 8px;
+    }
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 0 0 16px 24px; }
+    li { margin-bottom: 6px; }
+    code {
+      font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+      font-size: 14px; background: oklch(94% 0.008 85);
+      padding: 2px 6px; border-radius: 4px;
+    }
+    pre {
+      background: oklch(22% 0.02 70);
+      color: oklch(92% 0.006 70);
+      padding: 20px 24px; border-radius: var(--radius);
+      overflow-x: auto; font-size: 14px; line-height: 1.6;
+      margin: 16px 0 20px;
+    }
+    pre code { background: none; padding: 0; color: inherit; }
+    .step {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px; margin: 20px 0;
+    }
+    .step__num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; background: var(--accent); color: #fff;
+      border-radius: 50%; font-size: 14px; font-weight: 700; margin-right: 10px;
+      vertical-align: middle;
+    }
+    .step__title { font-size: 17px; font-weight: 600; display: inline; vertical-align: middle; }
+    .step__body { margin-top: 14px; }
+    .tip {
+      background: oklch(96% 0.012 75);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px; margin: 16px 0;
+      font-size: 15px; line-height: 1.6;
+    }
+    .tip strong { color: var(--accent-dark); }
+    .file-list {
+      display: grid; gap: 12px; margin: 16px 0;
+    }
+    .file-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .file-item__icon {
+      flex-shrink: 0; width: 40px; height: 40px;
+      background: oklch(94% 0.03 155); border-radius: 10px;
+      display: grid; place-items: center;
+    }
+    .file-item__icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .file-item__name { font-weight: 600; font-size: 15px; }
+    .file-item__desc { font-size: 13px; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    th { font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+    .done { color: var(--accent-dark); font-weight: 600; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Systeme.io Funnel Setup Guide</h1>
+  <p class="subtitle">Complete walkthrough to connect your opt-in page, thank-you page, and email sequence for the Brain Training for Dogs affiliate funnel.</p>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Files You Have</h2>
+  <div class="file-list">
+    <div class="file-item">
+      <div class="file-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <div>
+        <div class="file-item__name">systemeio-optin.html</div>
+        <div class="file-item__desc">Opt-in / squeeze page — the page visitors see first. Contains the email capture form.</div>
+      </div>
+    </div>
+    <div class="file-item">
+      <div class="file-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div>
+        <div class="file-item__name">systemeio-thankyou.html</div>
+        <div class="file-item__desc">Thank-you page — shown after email submission. Confirms delivery + offers next step.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 1 — Create the Funnel</h2>
+  <div class="step">
+    <span class="step__num">1</span>
+    <span class="step__title">Create a new funnel in Systeme.io</span>
+    <div class="step__body">
+      <ol>
+        <li>Log into Systeme.io</li>
+        <li>Click <strong>Funnels</strong> in the left sidebar</li>
+        <li>Click <strong>Create</strong> (top right)</li>
+        <li>Name it: <code>Brain Games Lead Magnet</code></li>
+        <li>Choose <strong>Build an audience</strong> as the goal</li>
+        <li>Click <strong>Create</strong></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 2 — Set Up the Opt-in Page</h2>
+  <div class="step">
+    <span class="step__num">2</span>
+    <span class="step__title">Configure the opt-in page</span>
+    <div class="step__body">
+      <ol>
+        <li>You will see one step: <strong>Opt-in page</strong> — click on it</li>
+        <li>Click <strong>Edit</strong></li>
+        <li>Choose a template or start blank</li>
+        <li><strong>Option A — Use Systeme.io builder:</strong> Design the page using drag-and-drop blocks. Add a headline, image, and form block.</li>
+        <li><strong>Option B — Paste custom HTML:</strong> Add a "Custom HTML" block and paste the contents of <code>systemeio-optin.html</code> inside it.</li>
+        <li>Make sure the form has an <strong>email input field</strong> (Systeme.io adds this by default)</li>
+        <li>Click <strong>Save</strong></li>
+      </ol>
+      <div class="tip">
+        <strong>Important:</strong> If you use the custom HTML file, replace the placeholder form action URL with your actual Systeme.io endpoint. Or just use Systeme.io's built-in form block and delete the HTML form entirely — Systeme.io handles the subscription automatically.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 3 — Set Up the Thank-You Page</h2>
+  <div class="step">
+    <span class="step__num">3</span>
+    <span class="step__title">Add the thank-you page</span>
+    <div class="step__body">
+      <ol>
+        <li>Click <strong>Add step</strong> below the opt-in page</li>
+        <li>Choose <strong>Thank you page</strong></li>
+        <li>Click <strong>Edit</strong></li>
+        <li>Add a Custom HTML block and paste the contents of <code>systemeio-thankyou.html</code></li>
+        <li>Or design it with the builder: headline + confirmation message + optional download button</li>
+        <li>Click <strong>Save</strong></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 4 — Create the Email Automation</h2>
+  <div class="step">
+    <span class="step__num">4</span>
+    <span class="step__title">Set up the autoresponder sequence</span>
+    <div class="step__body">
+      <h3>4a. Create an automation rule</h3>
+      <ol>
+        <li>Go to <strong>Emails</strong> → <strong>Campaigns</strong> in the left sidebar</li>
+        <li>Click <strong>Create</strong> → choose <strong>Automation rule</strong></li>
+        <li>Set trigger: <code>When a contact subscribes to funnel [Brain Games Lead Magnet]</code></li>
+        <li>Set action: <code>Send email</code></li>
+      </ol>
+
+      <h3>4b. Create the delivery email</h3>
+      <ol>
+        <li>Go to <strong>Emails</strong> → <strong>Emails</strong></li>
+        <li>Click <strong>Create</strong></li>
+        <li>Subject line: <code>Your 5 Brain Games PDF is here 🐕</code></li>
+        <li>Body template:</li>
+      </ol>
+      <pre><code>Hi {contact_first_name},
+
+Your free PDF is ready!
+
+Download it here: [YOUR-PDF-LINK]
+
+Inside you will find 5 brain games that take just 5 minutes each.
+Most owners see a calmer dog by the end of the day.
+
+If you want the full program with 21 games and video lessons,
+here is the link: [YOUR-CLICKBANK-HOPLINK]
+
+To your dog's happiness,
+Smart Paw Tips</code></pre>
+      <li>Attach the PDF or include a download link</li>
+      <li>Click <strong>Save and publish</strong></li>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 5 — Connect Your Domain (Optional but Recommended)</h2>
+  <div class="step">
+    <span class="step__num">5</span>
+    <span class="step__title">Point your domain to Systeme.io</span>
+    <div class="step__body">
+      <ol>
+        <li>Buy a domain (e.g. <code>smartpawtips.com</code>) — ~$10/year</li>
+        <li>In Systeme.io, go to <strong>Settings</strong> → <strong>Domains</strong></li>
+        <li>Add your domain and follow the DNS instructions</li>
+        <li>Set the funnel URL to something like <code>smartpawtips.com/brain-games</code></li>
+      </ol>
+      <div class="tip">
+        <strong>Why this matters:</strong> A branded domain looks more trustworthy than a <code>systeme.io/...</code> URL. Higher trust = higher opt-in rate.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Step 6 — Test the Full Flow</h2>
+  <div class="step">
+    <span class="step__num">6</span>
+    <span class="step__title">Verify everything works</span>
+    <div class="step__body">
+      <ol>
+        <li>Open your opt-in page URL in an incognito browser</li>
+        <li>Enter a test email address</li>
+        <li>Submit the form</li>
+        <li>Verify you land on the thank-you page</li>
+        <li>Check your inbox for the delivery email</li>
+        <li>Confirm the PDF link works</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>Quick Reference — What Goes Where</h2>
+  <table>
+    <thead>
+      <tr><th>Component</th><th>File / Tool</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Opt-in page</td><td><code>systemeio-optin.html</code></td><td>Captures email, sells the free PDF</td></tr>
+      <tr><td>Thank-you page</td><td><code>systemeio-thankyou.html</code></td><td>Confirms subscription, offers next step</td></tr>
+      <tr><td>Email delivery</td><td>Systeme.io Campaign</td><td>Sends PDF automatically to new subscribers</td></tr>
+      <tr><td>Email sequence</td><td>Systeme.io Automation (5–7 emails)</td><td>Pre-sells the full program over 7 days</td></tr>
+      <tr><td>Bridge page</td><td><code>index.html</code></td><td>Long-form advertorial → ClickBank HopLink</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <h2>How Pinterest Pins Connect to This</h2>
+  <div class="tip">
+    <strong>Your traffic flow:</strong> Pinterest Pin → Opt-in page (systemeio-optin.html) → Thank-you page → Email sequence → Bridge page (index.html) → ClickBank HopLink → Sale
+  </div>
+  <ol>
+    <li>Each Pinterest pin links to your <strong>opt-in page URL</strong> (not the bridge page directly)</li>
+    <li>The opt-in page captures the email</li>
+    <li>The email sequence nurtures the subscriber over 5–7 days</li>
+    <li>Each email contains a link to your <strong>bridge page</strong> (index.html)</li>
+    <li>The bridge page pre-sells and sends to ClickBank</li>
+  </ol>
+
+  <h2>Next Steps</h2>
+  <ol>
+    <li class="done">✅ Create Systeme.io account (done)</li>
+    <li>⬜ Create funnel with opt-in + thank-you pages</li>
+    <li>⬜ Upload your "5 Brain Games" PDF</li>
+    <li>⬜ Set up email delivery automation</li>
+    <li>⬜ Write 5–7 email sequence (I can write the copy)</li>
+    <li>⬜ Connect your domain</li>
+    <li>⬜ Test the full flow</li>
+    <li>⬜ Start pinning on Pinterest (3–5 pins/day)</li>
+  </ol>
+
+</div>
+</body>
+</html>

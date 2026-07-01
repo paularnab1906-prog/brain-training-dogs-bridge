@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download the FREE Brain Games Guide — Smart Paw Tips</title>
+  <style>
+    :root {
+      --bg:      oklch(98.5% 0.006 85);
+      --surface: oklch(100% 0.002 85);
+      --fg:      oklch(22% 0.018 70);
+      --muted:   oklch(52% 0.014 70);
+      --border:  oklch(88% 0.008 85);
+      --accent:  oklch(56% 0.14 155);
+      --accent-dark: oklch(46% 0.12 155);
+      --font-display: 'Georgia', 'Iowan Old Style', 'Charter', serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px; line-height: 1.7;
+      color: var(--fg); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .optin-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (min-width: 880px) {
+      .optin-shell { grid-template-columns: 1.1fr 1fr; }
+    }
+    .optin-visual {
+      background: linear-gradient(160deg, oklch(28% 0.04 70), oklch(20% 0.03 70));
+      color: oklch(95% 0.006 70);
+      padding: 48px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .optin-visual__badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; opacity: 0.7; margin-bottom: 28px;
+    }
+    .optin-visual h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.18; letter-spacing: -0.02em; margin-bottom: 20px;
+    }
+    .optin-visual p {
+      font-size: 16px; line-height: 1.65; opacity: 0.82;
+      max-width: 420px; margin-bottom: 32px;
+    }
+    .optin-visual__bullets { list-style: none; display: grid; gap: 14px; }
+    .optin-visual__bullets li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 15px; line-height: 1.5; opacity: 0.88;
+    }
+    .optin-visual__bullets svg {
+      flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px;
+      color: oklch(72% 0.14 155);
+    }
+    .optin-visual__img {
+      margin-top: 36px; border-radius: var(--radius);
+      overflow: hidden; aspect-ratio: 16/10;
+    }
+    .optin-visual__img img { width: 100%; height: 100%; object-fit: cover; }
+    .optin-form-panel {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 48px 40px; background: var(--bg);
+    }
+    .optin-form-panel__kicker {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent-dark); margin-bottom: 12px;
+    }
+    .optin-form-panel h1 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .optin-form-panel__sub {
+      font-size: 16px; color: var(--muted); line-height: 1.55;
+      margin-bottom: 28px; max-width: 400px;
+    }
+    .optin-form { display: flex; flex-direction: column; gap: 14px; }
+    .optin-form__field { display: flex; flex-direction: column; gap: 6px; }
+    .optin-form__field label { font-size: 13px; font-weight: 600; }
+    .optin-form__field input {
+      width: 100%; padding: 14px 18px;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      background: var(--surface); color: var(--fg);
+      font-size: 16px; font-family: var(--font-body); outline: none;
+      transition: border-color 0.15s;
+    }
+    .optin-form__field input:focus { border-color: var(--accent); }
+    .optin-form__btn {
+      width: 100%; padding: 16px 24px;
+      background: var(--accent); color: #fff;
+      font-size: 17px; font-weight: 600; border: none;
+      border-radius: 10px; cursor: pointer;
+      transition: background 0.15s, transform 0.1s; margin-top: 4px;
+    }
+    .optin-form__btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .optin-form__note {
+      font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px;
+    }
+    .optin-form__trust {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-top: 20px; flex-wrap: wrap;
+    }
+    .optin-form__trust span {
+      font-size: 12px; color: var(--muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .optin-form__trust svg { width: 14px; height: 14px; color: var(--accent); }
+    @media (max-width: 879px) {
+      .optin-visual { padding: 36px 24px 24px; }
+      .optin-form-panel { padding: 32px 24px 48px; }
+      .optin-visual__img { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="optin-shell">
+  <div class="optin-visual">
+    <div class="optin-visual__badge">Free Instant Download</div>
+    <h2>Download the FREE Brain Games Guide — 5 Mental Enrichment Exercises for Your Dog</h2>
+    <p>A simple PDF guide based on the same mental enrichment methods recommended by professional dog trainers — adapted for busy pet owners who want results without the overwhelm.</p>
+    <ul class="optin-visual__bullets">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Each game takes just 5 minutes — no equipment needed
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Helps address barking, chewing, and leash pulling through mental enrichment
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Used by 10,000+ dog owners worldwide
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Written by a certified dog behavior specialist
+      </li>
+    </ul>
+    <div class="optin-visual__img">
+      <img src="mqtm1lmv-ChatGPT-Image-Jun-25_-2026_-08_00_36-PM.png" alt="Tablet showing brain games guide with dog beside it" />
+    </div>
+  </div>
+  <div class="optin-form-panel">
+    <div class="optin-form-panel__kicker">Free PDF Guide</div>
+    <h1>Get the FREE Brain Games Guide — Instant Access</h1>
+    <p class="optin-form-panel__sub">Enter your email below. The PDF arrives in your inbox in under 60 seconds. No spam, ever.</p>
+    <form class="optin-form" id="optin-form">
+      <div class="optin-form__field">
+        <label for="optin-email">Email address</label>
+        <input type="email" id="optin-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      </div>
+      <button type="submit" class="optin-form__btn">Send Me the Free PDF &rarr;</button>
+    </form>
+    <p class="optin-form__note">We respect your privacy. Unsubscribe anytime with one click.</p>
+    <div class="optin-form__trust">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        SSL Secured
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No Spam
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Instant Access
+      </span>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('optin-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('button[type="submit"]');
+    var email = document.getElementById('optin-email').value;
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    if (!email) {
+      btn.textContent = "Please enter your email";
+      btn.disabled = false;
+      return;
+    }
+
+    // Step 1: Create contact
+    try {
+      var createRes = await fetch('https://api.systeme.io/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
+        },
+        body: JSON.stringify({ email: email })
+      });
+      var contactData = await createRes.json();
+
+      if (createRes.status === 201) {
+        // Step 2: Assign tag
+        await fetch('https://api.systeme.io/api/contacts/' + contactData.id + '/tags', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
+          },
+          body: JSON.stringify({ tagId: 2070083 })
+        });
+
+        // Step 3: Redirect to thank-you page
+        window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
+      } else if (createRes.status === 409 || createRes.status === 422) {
+        // Contact may already exist, try to assign tag anyway
+        if (contactData.id) {
+          await fetch('https://api.systeme.io/api/contacts/' + contactData.id + '/tags', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
+            },
+            body: JSON.stringify({ tagId: 2070083 })
+          });
+        }
+        window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
+      } else {
+        btn.textContent = "Something went wrong. Please try again.";
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = "Network error. Please try again.";
+      btn.disabled = false;
+    }
+  });
+</script>
+<div style="text-align:center; padding:20px; font-size:12px; color:#7a7570;">
+  <p>&copy; 2026 Smart Paw Tips</p>
+  <p><a href="about.html" style="color:#7a7570;">About</a> &middot; <a href="contact.html" style="color:#7a7570;">Contact</a> &middot; <a href="privacy.html" style="color:#7a7570;">Privacy Policy</a> &middot; <a href="terms.html" style="color:#7a7570;">Terms</a> &middot; <a href="affiliate-disclosure.html" style="color:#7a7570;">Affiliate Disclosure</a></p>
+</div>
+</body>
+</html>

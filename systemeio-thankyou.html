@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check Your Email! Your PDF Is on Its Way — Smart Paw Tips</title>
+  <style>
+    :root {
+      --bg:      oklch(98.5% 0.006 85);
+      --surface: oklch(100% 0.002 85);
+      --fg:      oklch(22% 0.018 70);
+      --muted:   oklch(52% 0.014 70);
+      --border:  oklch(88% 0.008 85);
+      --accent:  oklch(56% 0.14 155);
+      --accent-dark: oklch(46% 0.12 155);
+      --font-display: 'Georgia', 'Iowan Old Style', 'Charter', serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px; line-height: 1.7;
+      color: var(--fg); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: grid; place-items: center;
+      padding: 24px;
+    }
+    .ty-card {
+      max-width: 520px; width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .ty-icon {
+      width: 64px; height: 64px; margin: 0 auto 24px;
+      background: oklch(94% 0.03 155);
+      border-radius: 50%;
+      display: grid; place-items: center;
+    }
+    .ty-icon svg { width: 28px; height: 28px; color: var(--accent); }
+    .ty-card h1 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 32px);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .ty-card__sub {
+      font-size: 16px; color: var(--muted); line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .ty-steps {
+      text-align: left;
+      display: grid; gap: 16px;
+      margin: 28px 0;
+    }
+    .ty-step {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px; background: oklch(97% 0.005 85);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .ty-step__num {
+      flex-shrink: 0; width: 32px; height: 32px;
+      background: var(--accent); color: #fff;
+      border-radius: 50%; display: grid; place-items: center;
+      font-size: 14px; font-weight: 700;
+    }
+    .ty-step__text { font-size: 15px; line-height: 1.5; color: var(--fg); }
+    .ty-step__text strong { display: block; margin-bottom: 2px; }
+    .ty-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 32px; background: var(--accent); color: #fff;
+      font-size: 16px; font-weight: 600; border: none;
+      border-radius: 999px; cursor: pointer; text-decoration: none;
+      transition: background 0.15s; margin-top: 8px;
+    }
+    .ty-cta:hover { background: var(--accent-dark); }
+    .ty-note {
+      font-size: 13px; color: var(--muted); margin-top: 20px; line-height: 1.5;
+    }
+    .ty-next {
+      margin-top: 32px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .ty-next h3 {
+      font-family: var(--font-display); font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .ty-next p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 480px) {
+      .ty-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ty-card">
+  <div class="ty-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </div>
+
+  <h1>Check Your Inbox — Your PDF Is on Its Way</h1>
+  <p class="ty-card__sub">The "5 Brain Games" PDF will arrive within 60 seconds. While you wait, here is what to do next:</p>
+
+  <div class="ty-steps">
+    <div class="ty-step">
+      <div class="ty-step__num">1</div>
+      <div class="ty-step__text">
+        <strong>Open your email</strong>
+        Look for a message from Smart Paw Tips. Check spam/promotions if you do not see it.
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step__num">2</div>
+      <div class="ty-step__text">
+        <strong>Download the PDF</strong>
+        Click the download link in the email. Print it or keep it on your phone.
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step__num">3</div>
+      <div class="ty-step__text">
+        <strong>Try Game #1 today</strong>
+        It takes 5 minutes. Most owners see a calmer dog by the end of the day.
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: direct PDF download button (host your PDF and link here) -->
+  <a href="/5-brain-games.pdf" class="ty-cta" download>Download PDF Directly</a>
+
+  <p class="ty-note">If you do not receive the email within 5 minutes, check your spam folder or contact support@smartpawtips.com</p>
+
+  <div class="ty-next">
+    <h3>Want the full program?</h3>
+    <p>The free PDF covers 5 games. The complete Brain Training for Dogs program has 21 games, 7 training modules, and step-by-step video lessons. <a href="https://b5ffe3vcm3ls9la8u3qmc3r6uh.hop.clickbank.net">Learn more about the full program &rarr;</a></p>
+  </div>
+</div>
+
+<div style="text-align:center; padding:20px; font-size:12px; color:#7a7570; margin-top:24px;">
+  <p>&copy; 2026 Smart Paw Tips</p>
+  <p><a href="about.html" style="color:#7a7570;">About</a> &middot; <a href="contact.html" style="color:#7a7570;">Contact</a> &middot; <a href="privacy.html" style="color:#7a7570;">Privacy Policy</a> &middot; <a href="terms.html" style="color:#7a7570;">Terms</a> &middot; <a href="affiliate-disclosure.html" style="color:#7a7570;">Affiliate Disclosure</a></p>
+</div>
+
+</body>
+</html>
