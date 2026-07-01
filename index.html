@@ -552,31 +552,18 @@
     }
 
     function sendEmailToSysteme(email) {
-      var apiKey = '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp';
-      fetch('https://api.systeme.io/api/contacts', {
+      fetch('/api/subscribe', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-API-Key': apiKey
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email: email })
       })
       .then(function(res) { return res.json(); })
       .then(function(data) {
-        if (data.id) {
-          fetch('https://api.systeme.io/api/contacts/' + data.id + '/tags', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-              'X-API-Key': apiKey
-            },
-            body: JSON.stringify({ tagId: 2070083 })
-          });
-        }
+        console.log('Subscriber saved successfully:', data);
       })
-      .catch(function(err) { console.log('Email save failed:', err); });
+      .catch(function(err) { console.error('Email save failed:', err); });
     }
 
     document.querySelectorAll('a[href="#"]').forEach(function(a) {

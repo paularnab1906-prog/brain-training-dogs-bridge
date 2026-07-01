@@ -204,46 +204,17 @@
       return;
     }
 
-    // Step 1: Create contact
     try {
-      var createRes = await fetch('https://api.systeme.io/api/contacts', {
+      var res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email: email })
       });
-      var contactData = await createRes.json();
+      var data = await res.json();
 
-      if (createRes.status === 201) {
-        // Step 2: Assign tag
-        await fetch('https://api.systeme.io/api/contacts/' + contactData.id + '/tags', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
-          },
-          body: JSON.stringify({ tagId: 2070083 })
-        });
-
-        // Step 3: Redirect to thank-you page
-        window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
-      } else if (createRes.status === 409 || createRes.status === 422) {
-        // Contact may already exist, try to assign tag anyway
-        if (contactData.id) {
-          await fetch('https://api.systeme.io/api/contacts/' + contactData.id + '/tags', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-              'X-API-Key': '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp'
-            },
-            body: JSON.stringify({ tagId: 2070083 })
-          });
-        }
+      if (res.status === 200 || data.success) {
         window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
       } else {
         btn.textContent = "Something went wrong. Please try again.";
