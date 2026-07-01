@@ -181,7 +181,7 @@
       <div class="ty-step__num">2</div>
       <div class="ty-step__text">
         <strong>Download the PDF</strong>
-        <span>Click the download link in the email. Save it to your phone or print it out — whatever works best for you.</span>
+        <span>Click the download link in the email. Save it to your phone or print it out — whatever works best for you. Or <a href="#" onclick="downloadBothPdfs(event)" style="color:var(--accent-dark); font-weight:600; text-decoration:underline;">download the PDFs directly here</a>.</span>
       </div>
     </div>
     <div class="ty-step">
@@ -211,5 +211,26 @@
 
 </div>
 
+<script>
+  function downloadBothPdfs(e) {
+    if (e) e.preventDefault();
+    
+    var link1 = document.createElement('a');
+    link1.href = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+    link1.download = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+    document.body.appendChild(link1);
+    link1.click();
+    document.body.removeChild(link1);
+
+    setTimeout(function() {
+      var link2 = document.createElement('a');
+      link2.href = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+      link2.download = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+      document.body.appendChild(link2);
+      link2.click();
+      document.body.removeChild(link2);
+    }, 500);
+  }
+</script>
 </body>
 </html>

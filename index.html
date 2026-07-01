@@ -536,17 +536,29 @@
       if (email) {
         sendEmailToSysteme(email);
       }
-      // Trigger PDF download - replace with your actual PDF URL
-      var link = document.createElement('a');
-      link.href = '5-Brain-Games-Calm-Your-Dog.pdf';
-      link.download = '5-Brain-Games-Calm-Your-Dog.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      
+      // Download Lead Magnet 1: Smart Dog Starter Kit
+      var link1 = document.createElement('a');
+      link1.href = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+      link1.download = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+      document.body.appendChild(link1);
+      link1.click();
+      document.body.removeChild(link1);
+
+      // Download Lead Magnet 2: Focus Flight Game (The Airplane Game)
+      setTimeout(function() {
+        var link2 = document.createElement('a');
+        link2.href = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+        link2.download = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+        document.body.appendChild(link2);
+        link2.click();
+        document.body.removeChild(link2);
+      }, 500);
+
       // Redirect to thank-you page after download
       setTimeout(function() {
         window.location.href = 'thankyou.html';
-      }, 1500);
+      }, 2000);
     }
 
     function sendEmailToSysteme(email) {

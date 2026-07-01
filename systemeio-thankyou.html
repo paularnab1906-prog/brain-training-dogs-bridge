@@ -148,7 +148,7 @@
   </div>
 
   <!-- Optional: direct PDF download button (host your PDF and link here) -->
-  <a href="/5-brain-games.pdf" class="ty-cta" download>Download PDF Directly</a>
+  <a href="#" class="ty-cta" onclick="downloadBothPdfs(event)">Download PDF Directly</a>
 
   <p class="ty-note">If you do not receive the email within 5 minutes, check your spam folder or contact support@smartpawtips.com</p>
 
@@ -163,5 +163,26 @@
   <p><a href="about.html" style="color:#7a7570;">About</a> &middot; <a href="contact.html" style="color:#7a7570;">Contact</a> &middot; <a href="privacy.html" style="color:#7a7570;">Privacy Policy</a> &middot; <a href="terms.html" style="color:#7a7570;">Terms</a> &middot; <a href="affiliate-disclosure.html" style="color:#7a7570;">Affiliate Disclosure</a></p>
 </div>
 
+<script>
+  function downloadBothPdfs(e) {
+    if (e) e.preventDefault();
+    
+    var link1 = document.createElement('a');
+    link1.href = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+    link1.download = 'Smart-Dog-Starter-Kit-5-Brain-Games.pdf';
+    document.body.appendChild(link1);
+    link1.click();
+    document.body.removeChild(link1);
+
+    setTimeout(function() {
+      var link2 = document.createElement('a');
+      link2.href = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+      link2.download = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+      document.body.appendChild(link2);
+      link2.click();
+      document.body.removeChild(link2);
+    }, 500);
+  }
+</script>
 </body>
 </html>
