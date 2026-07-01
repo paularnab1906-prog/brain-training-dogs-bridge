@@ -552,6 +552,44 @@
     }
 
     function sendEmailToSysteme(email) {
+      var localApiKey = '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp';
+      var tagId = 2070083;
+
+      function callDirectly() {
+        console.log('Using direct API fallback...');
+        fetch('https://api.systeme.io/api/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-API-Key': localApiKey
+          },
+          body: JSON.stringify({ email: email })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.id) {
+            fetch('https://api.systeme.io/api/contacts/' + data.id + '/tags', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-API-Key': localApiKey
+              },
+              body: JSON.stringify({ tagId: tagId })
+            });
+          }
+        })
+        .catch(function(err) { console.error('Direct fallback save failed:', err); });
+      }
+
+      // If running locally as a file, go direct
+      if (window.location.protocol === 'file:') {
+        callDirectly();
+        return;
+      }
+
+      // Otherwise try serverless
       fetch('/api/subscribe', {
         method: 'POST',
         headers: {
@@ -559,11 +597,20 @@
         },
         body: JSON.stringify({ email: email })
       })
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        console.log('Subscriber saved successfully:', data);
+      .then(function(res) {
+        if (!res.ok) {
+          callDirectly();
+        } else {
+          return res.json();
+        }
       })
-      .catch(function(err) { console.error('Email save failed:', err); });
+      .then(function(data) {
+        if (data) console.log('Subscriber saved successfully:', data);
+      })
+      .catch(function(err) {
+        console.warn('Serverless endpoint failed, falling back to direct API call...', err);
+        callDirectly();
+      });
     }
 
     document.querySelectorAll('a[href="#"]').forEach(function(a) {

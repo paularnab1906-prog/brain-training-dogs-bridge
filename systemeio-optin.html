@@ -204,6 +204,70 @@
       return;
     }
 
+    var localApiKey = '36ztyx4nsjj2nssdjqf1z2wn38r25u5go808nkcywujg3kv3ne9zl1303kelw0pp';
+    var tagId = 2070083;
+
+    async function callDirectly() {
+      console.log('Using direct API fallback...');
+      try {
+        var createRes = await fetch('https://api.systeme.io/api/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-API-Key': localApiKey
+          },
+          body: JSON.stringify({ email: email })
+        });
+        var contactData = await createRes.json();
+
+        if (createRes.status === 201 || createRes.status === 409 || createRes.status === 422) {
+          let contactId = contactData.id;
+
+          // Search if ID not returned
+          if (!contactId && email) {
+            try {
+              var searchRes = await fetch('https://api.systeme.io/api/contacts?email=' + encodeURIComponent(email), {
+                method: 'GET',
+                headers: {
+                  'Accept': 'application/json',
+                  'X-API-Key': localApiKey
+                }
+              });
+              var searchData = await searchRes.json();
+              if (searchData.items && searchData.items.length > 0) {
+                contactId = searchData.items[0].id;
+              }
+            } catch (se) {}
+          }
+
+          if (contactId) {
+            await fetch('https://api.systeme.io/api/contacts/' + contactId + '/tags', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-API-Key': localApiKey
+              },
+              body: JSON.stringify({ tagId: tagId })
+            });
+          }
+          window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
+        } else {
+          btn.textContent = "Something went wrong. Please try again.";
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btn.textContent = "Error saving email. Please try again.";
+        btn.disabled = false;
+      }
+    }
+
+    if (window.location.protocol === 'file:') {
+      await callDirectly();
+      return;
+    }
+
     try {
       var res = await fetch('/api/subscribe', {
         method: 'POST',
@@ -217,12 +281,11 @@
       if (res.status === 200 || data.success) {
         window.location.href = 'https://paul-arnab1906.systeme.io/8d1951e7';
       } else {
-        btn.textContent = "Something went wrong. Please try again.";
-        btn.disabled = false;
+        await callDirectly();
       }
     } catch(err) {
-      btn.textContent = "Network error. Please try again.";
-      btn.disabled = false;
+      console.warn('Serverless endpoint failed, trying direct API call...', err);
+      await callDirectly();
     }
   });
 </script>
