@@ -533,22 +533,32 @@
 
     function downloadPdf() {
       var email = document.getElementById('popup-email').value;
-      if (email) {
-        sendEmailToSysteme(email);
-      }
+      var btn = document.getElementById('download-btn');
       
-      // Download the primary PDF (Focus Flight Game)
-      var link = document.createElement('a');
-      link.href = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
-      link.download = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      if (!email) {
+        alert('Please enter your email address.');
+        return;
+      }
 
-      // Redirect to thank-you page where they can get both files individually
-      setTimeout(function() {
-        window.location.href = 'thankyou.html';
-      }, 1500);
+      btn.disabled = true;
+      btn.textContent = 'Saving & Downloading...';
+
+      function triggerDownload() {
+        var link = document.createElement('a');
+        link.href = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+        link.download = 'The-Focus-Flight-Game-by-Adrienne-Farricelli.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        setTimeout(function() {
+          window.location.href = 'thankyou.html';
+        }, 1000);
+      }
+
+      sendEmailToSysteme(email).finally(function() {
+        triggerDownload();
+      });
     }
 
     function sendEmailToSysteme(email) {
@@ -557,7 +567,7 @@
 
       function callDirectly() {
         console.log('Using direct API fallback...');
-        fetch('https://api.systeme.io/api/contacts', {
+        return fetch('https://api.systeme.io/api/contacts', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -569,7 +579,7 @@
         .then(function(res) { return res.json(); })
         .then(function(data) {
           if (data.id) {
-            fetch('https://api.systeme.io/api/contacts/' + data.id + '/tags', {
+            return fetch('https://api.systeme.io/api/contacts/' + data.id + '/tags', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -585,12 +595,11 @@
 
       // If running locally as a file, go direct
       if (window.location.protocol === 'file:') {
-        callDirectly();
-        return;
+        return callDirectly();
       }
 
       // Otherwise try serverless
-      fetch('/api/subscribe', {
+      return fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -599,7 +608,7 @@
       })
       .then(function(res) {
         if (!res.ok) {
-          callDirectly();
+          return callDirectly();
         } else {
           return res.json();
         }
@@ -609,7 +618,7 @@
       })
       .catch(function(err) {
         console.warn('Serverless endpoint failed, falling back to direct API call...', err);
-        callDirectly();
+        return callDirectly();
       });
     }
 
